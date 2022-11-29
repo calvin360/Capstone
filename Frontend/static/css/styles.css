@@ -1,0 +1,1353 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Karla:400|Grenze:400');
+
+html {
+    font-size: 100%;
+}
+
+/*16px*/
+
+:root {
+    /* colors */
+    --primary-100: #e2e0ff;
+    --primary-200: #c1beff;
+    --primary-300: #a29dff;
+    --primary-400: #837dff;
+    --primary-500: #645cff;
+    --primary-600: #504acc;
+    --primary-700: #3c3799;
+    --primary-800: #282566;
+    --primary-900: #141233;
+
+    /* grey */
+    --grey-50: #f8fafc;
+    --grey-100: #f1f5f9;
+    --grey-200: #e2e8f0;
+    --grey-300: #cbd5e1;
+    --grey-400: #94a3b8;
+    --grey-500: #64748b;
+    --grey-600: #475569;
+    --grey-700: #334155;
+    --grey-800: #1e293b;
+    --grey-900: #0f172a;
+    /* rest of the colors */
+    --black: #222;
+    --white: #fff;
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
+
+    /* fonts  */
+    --fontHeading: 'Grenze', serif;
+    --fontBody: 'Karla', sans-serif;
+    --fontSmalltext: 0.8em;
+
+    /* rest of the vars */
+    --backgroundColor: var(--grey-50);
+    --textColor: var(--grey-900);
+    --borderRadius: 0.25rem;
+    --letterSpacing: 1px;
+    --transition: 0.3s ease-in-out all;
+    --max-width: 1120px;
+    --fixed-width: 600px;
+
+    /* box shadow*/
+    --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+body {
+    background: white;
+    font-family: var(--fontBody);
+    font-weight: 400;
+    line-height: 1.75;
+    color: #000000;
+}
+
+p {
+    margin-bottom: 1rem;
+    max-width: 45em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-family: var(--fontHeading);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 2.488rem;
+}
+
+h2 {
+    font-size: 2.074rem;
+}
+
+h3 {
+    font-size: 1.728rem;
+}
+
+h4 {
+    font-size: 1.44rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+small,
+.text-small {
+    font-size: var(--fontSmalltext)
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* buttons */
+
+.btn {
+    cursor: pointer;
+    color: var(--white);
+    background: #867fff;
+    letter-spacing: var(--letterSpacing);
+    padding: 0.375rem 0.75rem;
+    transition: var(--transtion);
+    text-transform: capitalize;
+    display: inline-block;
+    border: 3px solid rgb(16, 68, 239);
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background: var(--primary-700);
+    box-shadow: var(--shadow-3);
+}
+
+/* alerts */
+.alert {
+    padding: 0.375rem 0.75rem;
+    margin-bottom: 1rem;
+    border-color: transparent;
+    border-radius: var(--borderRadius);
+}
+
+.alert-danger {
+    color: var(--red-dark);
+    background: var(--red-light);
+}
+
+.alert-success {
+    color: var(--green-dark);
+    background: var(--green-light);
+}
+
+/* form */
+
+.form {
+    width: 90vw;
+    max-width: var(--fixed-width);
+    background: var(--white);
+    border-radius: var(--borderRadius);
+    box-shadow: var(--shadow-2);
+    padding: 2rem 2.5rem;
+    margin: 3rem auto;
+}
+
+.form-label {
+    display: block;
+    font-size: var(--smallText);
+    margin-bottom: 0.5rem;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    border-radius: var(--borderRadius);
+    background: var(--backgroundColor);
+    border: 1px solid var(--grey-200);
+}
+
+.form-row {
+    margin-bottom: 1rem;
+}
+
+.form-textarea {
+    height: 7rem;
+}
+
+::placeholder {
+    font-family: inherit;
+    color: var(--grey-400);
+}
+
+.form-alert {
+    color: var(--red-dark);
+    letter-spacing: var(--letterSpacing);
+    text-transform: capitalize;
+}
+
+/* alert */
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    width: 6rem;
+    height: 6rem;
+    border: 5px solid var(--grey-400);
+    border-radius: 50%;
+    border-top-color: var(--primary-500);
+    animation: spinner 0.6s linear infinite;
+}
+
+.loading {
+    margin: 0 auto;
+}
+
+/* title */
+
+.title {
+    text-align: center;
+}
+
+.title-underline {
+    background: var(--primary-500);
+    width: 7rem;
+    height: 0.25rem;
+    margin: 0 auto;
+    margin-top: -1rem;
+}
+
+/************************************ NavBar ************************************************/
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-center {
+    width: 90vw;
+    max-width: 1500px;
+}
+
+.nav-header {
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: flex-end;
+    color: black;
+    font-family: 'Ms Madi', cursive;
+}
+
+.nav-btn {
+    padding: 0.15rem 0.75rem;
+}
+
+.nav-btn i {
+    font-size: 1.25rem;
+}
+
+.nav-links {
+    height: 0;
+    overflow: hidden;
+    display: inline-flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #443e3e;
+
+}
+
+.nav-link {
+    display: block;
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    color: var(--grey-900);
+    letter-spacing: var(--letterSpacing);
+    padding: 1rem 0;
+    border-top: 1px solid var(--grey-500);
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-500);
+}
+
+.signIn-link a {
+    padding: 0.15rem 1rem;
+}
+
+@media screen and (min-width: 992px) {
+    .navbar {
+        height: 6rem;
+    }
+
+    .nav-center {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-header {
+        padding: 0;
+        margin-right: 2rem;
+        height: auto;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .nav-links {
+        height: auto !important;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0;
+        border-top: none;
+        margin-right: 1rem;
+        font-size: 1rem;
+    }
+
+    .signIn-link {
+        margin-right: 0;
+        margin-left: auto;
+    }
+}
+
+.mega-box {
+    position: absolute;
+    left: 200px;
+    width: 1500px;
+    top: 80px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.mega-box .content {
+    padding: 20px 20px;
+    height: 300px;
+    display: flex;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.content .row {
+    width: calc(25% - 20px);
+    line-height: 45px;
+}
+
+.content .row img {
+    width: 300px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.content .row header {
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.content .row .mega-links {
+    border-left: 1px solid rgb(0, 0, 0)
+}
+
+.content .row:nth-child(1),
+.content .row:nth-child(2) {
+    border-left: 0px;
+}
+
+.row .mega-links li {
+    padding: 0 20px;
+}
+
+.row .mega-links li a {
+    font-size: 17px;
+    display: block;
+}
+
+.nav-links li:hover .mega-box {
+    top: 80px;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease;
+}
+
+/************************************ NavBar ************************************************/
+/************************************ Page ************************************************/
+.page {
+    width: 1300px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    min-height: calc(100vh - (6rem + 4rem));
+}
+
+/************************************ Page ************************************************/
+/************************************ recipe ************************************************/
+.recipe-list {
+    display: grid;
+    gap: 5rem 1rem;
+    padding-bottom: 3rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.recipe {
+    display: block;
+    width: 80%;
+}
+
+.recipe-img {
+    height: 10rem;
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    transition: 1s;
+    cursor: zoom-in;
+}
+
+.recipe-img:hover {
+    height: 20rem;
+}
+
+.recipe h5 {
+    margin-bottom: 0;
+    line-height: 1;
+    color: var(--grey-700);
+}
+
+.recipe p {
+    margin: 0;
+    line-height: 1;
+    margin-top: 0.5rem;
+    color: var(--grey-700);
+    letter-spacing: var(--letterSpacing);
+}
+
+
+/************************************ recipe ************************************************/
+
+/************************************ single recipe ************************************************/
+.recipe-column {
+    float: left;
+}
+
+.left {
+    width: 45%;
+}
+
+.right {
+    width: 55%;
+    height: 390px;
+}
+
+.recipe-img1 {
+    max-width: 550px;
+    max-height: 350px;
+}
+
+.recipe-info {
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.recipe-info p {
+    color: var(--grey-600);
+}
+
+
+.recipe-prep {
+    display: grid;
+    text-align: center;
+    padding-top: 20px;
+    margin-left: 100px;
+    gap: 2rem;
+    width: 70%;
+    height: auto;
+    grid-template-columns: 4fr 5fr 1fr 1fr;
+}
+
+.recipe-prep i {
+    font-size: 1.4rem;
+}
+
+.recipe-prep h5,
+.recipe-prep p {
+    margin: 0;
+    color: var(--grey-600);
+}
+
+.recipe-prep p {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+.recipe-tags {
+    float: left;
+    width: 45%;
+    height: 20%;
+}
+
+.recipe-tags .left {
+    width: 55%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.recipe-tags .right {
+    display: grid;
+    width: 45%;
+    height: auto;
+    grid-template-columns: 2fr 1fr 3fr;
+    text-align: right;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.recipe-tags p {
+    color: var(--grey-600);
+    font-weight: 700;
+}
+
+.sub-btn {
+    background-color: red;
+    color: white;
+    height: 40px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+
+.radio_group {
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    font-size: 40px;
+}
+
+.radio_group input[type="radio"] {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.radio_group input[type="radio"]+.like-label {
+    color: #95a5a6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.radio_group input[type="radio"]:checked+.like-label {
+    color: #f30000;
+}
+
+.radio_group input[type="radio"]+.save-label {
+    color: #95a5a6;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.radio_group input[type="radio"]:checked+.save-label {
+    color: #f30000;
+}
+
+
+.recipe-instruction-ingredients {
+    float: left;
+    height: auto;
+    width: 100%;
+
+}
+
+.recipe-instruction-ingredients .left {
+    width: 60%;
+}
+
+.recipe-instruction-ingredients .right {
+    width: 40%;
+}
+
+.button-like {
+    background-color: #EA4C89;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-bottom: 2px;
+    margin-right: 2px;
+}
+
+.button-like:hover,
+.button-like:focus {
+    background-color: #171717;
+}
+
+
+.button-dislike {
+    background-color: #3d3a3b;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-dislike:hover,
+.button-dislike:focus {
+    background-color: #171717;
+}
+
+.button-save {
+    background-color: #c60f0f;
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    outline: none;
+    padding: 10px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: color 100ms;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-save:hover,
+.button-save:focus {
+    background-color: #171717;
+}
+
+
+.single-step header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.single-step header p {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgb(0, 100, 172);
+}
+
+.single-step header .underline {
+    height: 2px;
+    width: 90%;
+    background: var(--grey-300);
+}
+
+.step {
+    height: 1%;
+    padding-left: 30px;
+    color: var(--grey-500);
+    white-space: pre-line;
+
+}
+
+
+
+.single-ingredients {
+    padding-left: 5px;
+    border-bottom: 2px solid var(--grey-300);
+    padding-bottom: 0.75rem;
+    color: var(--grey-700);
+    white-space: pre-line;
+}
+
+.comment-area {
+    height: auto;
+    width: 100%;
+}
+
+.comment-area .comment-content {
+    width: 80%;
+    height: 25%;
+    margin-left: 10%;
+}
+
+.comment-content .comment-avatar {
+    max-width: 30px;
+    max-height: 100%;
+    border-radius: 50%;
+}
+
+.comment-input {
+    line-height: 28px;
+    border: 2px solid transparent;
+    border-bottom-color: #777;
+    outline: none;
+    background-color: transparent;
+    color: #0d0c22;
+    width: 950px;
+}
+
+.comment-input::placeholder {
+    color: rgb(113, 95, 95);
+}
+
+.comment-input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+}
+
+.comment-area .load-comments {
+    padding-top: 20px;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: fixed;
+
+}
+
+.comment-name {
+    font-weight: 700;
+    color: rgb(190, 50, 19);
+}
+
+.ingredients-padding {
+    padding-left: 30px;
+}
+
+.similar-recipe {
+    height: 400px;
+    overflow: auto;
+}
+
+.similar-recipes-list {
+    display: grid;
+    gap: 5rem 1rem;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr;
+    padding-left: 50px;
+}
+
+.similar-recipes-img {
+    height: 10rem;
+    border-radius: var(--borderRadius);
+    margin-bottom: 1rem;
+    transition: 1s;
+    cursor: zoom-in;
+}
+
+.display {
+    display: none;
+}
+
+.reccomended_name {
+    color: black;
+}
+
+/************************************ single recipe ************************************************/
+
+/************************************ Footer ************************************************/
+
+.footer {
+    height: auto;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer .row {
+    height: 260px;
+    padding-right: 150px;
+    padding-left: 10px;
+    padding-top: 20px;
+    border-right: 0.5px solid rgb(200, 181, 181);
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+
+.footer-socials {
+    padding-right: 5px;
+    color: #222;
+}
+
+.footer-socials:hover {
+    color: #00bfff;
+}
+
+.footer-newletter {
+    padding: 12px 15px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border-radius: 15px;
+}
+
+.footer-newletter:focus {
+    border: 3px solid #555;
+}
+
+.footer-download {
+    margin-top: 20px;
+    margin-left: 40px;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(69, 56, 56);
+    color: white;
+    border-radius: 20px;
+}
+
+
+
+
+/***********************************login***********************************************/
+.login-wrapper {
+    height: 93vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../images/profile/image.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.login-form {
+    position: relative;
+    width: 500px;
+    padding: 70px 30px 30px;
+    background: rgba(179, 119, 119, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.login-form::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(233, 6, 6, 0.08);
+    transform: skewX(-45deg);
+    border-radius: 20px;
+}
+
+.login-form h2 {
+    text-align: center;
+}
+
+.login-form img {
+    position: absolute;
+    top: -50px;
+    left: calc(40%);
+    width: 100px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+}
+
+.login-form .container {
+    position: relative;
+}
+
+.login-form .container input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: inherit;
+}
+
+.login-form .container label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .3s ease-out;
+}
+
+.login-form .container input:focus~label,
+.login-form .container input:valid~label {
+    transform: translateY(-18px);
+    color: rgb(85, 255, 59);
+    font-size: .8rem;
+}
+
+.submit-btn {
+    display: block;
+    color: #fde0e4;
+    padding: 10px 20px;
+    margin-left: auto;
+    background-color: transparent;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+}
+
+.submit-btn:hover {
+    color: rgb(85, 255, 59);
+}
+
+.forgot-password {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    color: rgb(154, 60, 60);
+}
+
+
+/***********************************login***********************************************/
+
+/***********************************Pre-loader******************************************/
+#loading-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+#loading-wrapper .loading-dir {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 1000;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+#loading-wrapper .loading-dir.dir-left {
+    left: 0;
+    background-image: url('../images/welcome2.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#loading-wrapper .loading-dir.dir-right {
+    right: 0;
+    background-image: url('../images/welcome1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#loading {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #3e46a0;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 1001;
+}
+
+#loading:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #186f1c;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 3s linear infinite;
+}
+
+#loading:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top-color: #ed6dd3;
+    -webkit-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.loaded #loading-wrapper {
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    transform: translateY(-100%);
+    -webkit-transition: all 0.3s 1s ease-out;
+    transition: all 0.3s 1s ease-out;
+}
+
+.loaded #loading-wrapper .loading-dir.dir-left {
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loading-wrapper .loading-dir.dir-right {
+    -webkit-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    transform: translateX(100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.loaded #loading {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+/***********************************Pre-loader******************************************/
+
+
+/***********************************Profile page******************************************/
+.p-padding {
+    padding: 5%;
+
+}
+
+.p-bcolor {
+
+    background-color: #F0F8FF;
+
+}
+
+.p-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.p-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+}
+
+.p-imgbox {
+    padding-left: 30%;
+}
+
+.p-img {
+    border-radius: 50%;
+
+}
+
+.p-btnposition {
+    padding-left: 30%;
+}
+
+.p-btn {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #00bfff;
+    width: 300px;
+
+}
+
+.p-btn:hover {
+
+    background-color: white;
+    color: #000;
+}
+
+.p-delete {
+    background-color: red;
+}
+
+/***********************************Profile page******************************************/
+
+
+
+
+/***********************************add recipe page******************************************/
+.r-middle {
+    padding-left: 30%;
+    padding-right: 30%;
+}
+
+.r-color {
+    background-color: #d3d3d3;
+    width: 750px;
+}
+
+.r-text {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+
+.r-btnposition {
+    padding-left: 30%;
+}
+
+.rp-text {
+    padding-left: 35%;
+    padding-right: 5%;
+}
+
+.rp-btn {
+
+    width: 200px;
+
+}
+
+/***********************************add recipe page******************************************/
+
+
+
+
+/***********************************Change profile******************************************/
+.cp-text {
+    padding-left: 35%;
+    padding-right: 5%;
+}
+
+.cp-img {
+    padding-left: 5%;
+}
+
+
+/* .cp-btnposition {
+    padding-left: 5%;
+} */
+
+
+.cp-btn {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: #00bfff;
+    width: 200px;
+}
+
+.cp-btn:hover {
+
+    background-color: white;
+    color: #000;
+}
+
+.cp-delete {
+    background-color: red;
+}
+
+/***********************************Change profile******************************************/
+
+/***********************************feedback******************************************/
+.feedback-form {
+    position: relative;
+    width: 1200px;
+    padding: 70px 30px 30px;
+    background: rgba(179, 119, 119, 0.7);
+    border-radius: 10px;
+    color: #fff;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+.feedback-container {
+    padding-left: 200px;
+}
+
+
+
+/***********************************feedback******************************************/
+/***********************************Contact******************************************/
+#map {
+    width: 100%;
+    height: 400px;
+}

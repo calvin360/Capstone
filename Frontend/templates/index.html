@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+
+    <title>Food Nation</title>
+</head>
+
+<body>
+    <loading id="loading-wrapper">
+        <div id="loading"></div>
+        <div class="loading-dir dir-left"></div>
+        <div class="loading-dir dir-right"></div>
+    </loading>
+
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="#">Food Nation</a></div>
+            <ul class="nav-links">
+                <li><a href="#">link1</a></li>
+                <li><a href="#">link2</a></li>
+                <li>
+                    <a href="#">dropdown menu</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Mega Menu</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="{{ url_for('static', filename='images/dish1.jpg')}}" alt="">
+                            </div>
+                            <div class="row">
+                                <header>Recipes-1</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Recipes-2</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Recipes-3</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="{{url_for('register')}}">Sign up</a></li>
+                </li>
+                <li><a href="{{url_for('login')}}">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container"></div>
+    {% block content %}{% endblock %}
+</body>
+
+<script src="{{url_for('static', filename='js/jquery-3.6.1.js')}}"></script>
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+</html>

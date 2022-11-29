@@ -1,0 +1,86 @@
+{% extends 'logged.html' %}
+
+{% block content %}
+<!-- profile page  -->
+    <form method="POST" class="login-form">
+    <div>
+        <div >
+            <div >
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" width="100">
+        
+                
+                <div >
+                    <div >
+                        <h6 >Name</h6>
+                    </div>
+                    <div >
+                        {{g.user.firstName}} {{g.user.lastName}}
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div >
+                        <h6 >Username</h6>
+                    </div>
+                    <div >
+                        {{g.user.username}}
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div >
+                        <h6 >Email</h6>
+                    </div>
+                    <div >
+                        {{g.user.email}}
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div >
+                        <h6 >Nummber of people Follow?</h6>
+                    </div>
+                    <div >
+                        0
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div >
+                        <h6 >Followed By?</h6>
+                    </div>
+                    <div >
+                        0
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div >
+                        <h6 >recipet Uploaded?</h6>
+                    </div>
+                    <div >
+                        0
+                    </div>
+                </div>
+                <hr>
+                <div >
+                    <div class="col-sm-12">
+                        <button  href="#">Change Profile</button>
+                    </div>
+                </div>
+                <div >
+                    <div class="col-sm-12">
+                        <a class="button" href="{{url_for('resetPass')}}">Change Password</button>
+                    </div>
+                </div>
+                <div >
+                    <div class="col-sm-12">
+                        <button  name="deleteButton" >Delete Account</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

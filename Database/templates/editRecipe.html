@@ -1,0 +1,92 @@
+{% extends 'logged_template.html' %}
+
+{% block content %}
+
+<div class="r-middle">
+    <div class="r-color">
+        <br>
+        <div class="r-text">
+            <h1>Edit Recipe</h1>
+            <form method="POST" action="{{ url_for('apps.save_edit_recipe', id=recipe.recipe_id) }}"
+                enctype="multipart/form-data">
+                <div>{{ recipe.recipe_id }}</div>
+
+                <label><b>Recipe Image</b></label>
+                <div>
+                    <input id="recipe-image" name="file" type="file" accept="image/png, image/gif, image/jpeg" value="">
+                </div>
+                <br>
+                <label><b>Recipe Name</b></label>
+                <div>
+                    <input type="text" placeholder="Recipe Name" name="recipe_name" required="required" size="60%"
+                        value="{{recipe.recipe_name}}">
+                </div>
+                <br>
+                <label><b>Description </b></label>
+                <div class="r-textbox">
+                    <textarea name="recipe_description" rows="5" cols="80%"
+                        required="required">{{recipe.recipe_description}}</textarea>
+                </div>
+                <br>
+                <label><b>Ingredient </b></label>
+                <div>
+                    <textarea name="recipe_ingredients" rows="5" cols="80%"
+                        required="required">{{recipe.recipe_ingredients}}</textarea>
+                </div>
+                <br>
+                <label><b>Instructions </b></label>
+                <div>
+                    <textarea name="recipe_method" rows="5" cols="80%"
+                        required="required">{{recipe.recipe_method}}</textarea>
+                </div>
+                <br>
+                <label><b>Meal Type </b></label>
+                <select id="meal_type" name="meal_type" required="required">
+                <option value="Breakfast">Breakfast</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+                <option value="General">General</option>
+                </select><br>
+                <label><b>Prep Time</b></label>
+                <div>
+                    <input type="number" placeholder="Recipe Prep Time" name="prep_time" required="required" size="60%" value="{{recipe.prep_time}}">
+                </div> 
+                <br>
+                <label><b>Cook Time</b></label>
+                <div>
+                    <input type="number" placeholder="Recipe Cook Time" name="cook_time" required="required" size="60%" value="{{recipe.cook_time}}">
+                </div>
+                <br>
+                <label><b>Servings</b></label>
+                <div>
+                    <input type="number" placeholder="Servings" name="servings" required="required" size="60%" value="{{recipe.servings}}">
+                </div>
+                <br>
+                <label><b>Video (optional) </b></label>
+                <br>
+                <input type="text" id="input" name="input_video" value="{{recipe.recipe_video}}" size="60%">
+                <br>
+                <br>
+                <div class="r-btnposition">
+                    <button class="p-btn" type="submit">Save Changes</button>
+                </div>
+                <br>
+
+                <br>
+
+            </form>
+
+            <br>
+
+            <div class="r-btnposition">
+                <form action="{{ url_for('apps.myRecipe') }}" method="GET">
+                    <input class="p-btn p-delete" type="submit" value="Cancel"  />
+
+                </form>
+            </div>
+            <br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

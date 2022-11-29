@@ -1,0 +1,64 @@
+{% extends 'logged_template.html' %}
+
+{% block content %}
+<!-- profile page  -->
+
+<div id="profile-page" class="r-middle">
+    <div class="r-color">
+    <br>
+    <div class="cp-text">
+    <form action="{{ url_for('apps.saveProfileChange') }}" enctype = "multipart/form-data" method="POST" >
+        <div>
+            <div >
+                <div>
+                    <h1>Change Profile</h1>
+                    <div class="cp-img" >
+
+                        <img class="p-img" src="{{ pic }}" alt="" width="150" height="150">
+                    </div>
+                    <div>
+                    
+                        <div >
+                            <h6>First Name</h6>
+                            <input name="firstName" type="text" value="{{g.user.firstName}}">
+                        </div>
+                    </div>
+
+                    <div>
+                        <div >
+                            <h6>Last Name</h6>
+                            <input name="lastName" type="text" value="{{g.user.lastName}}">
+                        </div>
+                    </div>
+
+                    <div >
+                        <div >
+                            <h6>Profile Image</h6>
+                            <input id="profile-image" name="file" type="file" accept="image/png, image/gif, image/jpeg" value="">
+                        </div>
+                    </div>
+                    <br>
+                    <div >
+                        <div class="cp-btnposition">
+                            <button class="cp-btn" type="submit">Save changes</button>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        </form>
+        <div class="cp-btnposition">
+            <form action="{{ url_for('apps.profile') }}" method="GET">
+                <input class="cp-btn cp-delete" type="submit" value="Cancel" />
+
+            </form>
+
+        </div>
+<br>
+</div>
+</div>
+</div>
+
+{% endblock %}

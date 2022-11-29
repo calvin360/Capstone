@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+        <h1>Add Recipe</h1>
+        <form class="middle">
+            <label><b>Recipe Name</b></label>
+            <div>
+                <input type="text" placeholder="Recipe Name" required="required">
+            </div>
+            <br>
+            <label><b>Description </b></label>
+            <div class="space">
+                <textarea  rows="4" cols="50"></textarea>
+            </div>
+            <label><b>Ingredient </b></label>
+            <div class="space">
+                <textarea  rows="4" cols="50" required="required"></textarea>
+            </div>
+            <label><b>Instructions </b></label>
+            <div class="space">
+                <textarea  rows="4" cols="50" required="required"></textarea>
+            </div>
+            <br>
+            <label><b>Video </b></label>
+            <br>
+            <input type="file" id="input" name="input_video" accept="video/mp4, video/mov">
+            <div class="space">
+                <button type="submit">Add Recipe</button>
+            </div>
+            <br>
+        
+            <br>
+            <div class="space">
+                <button type="button">Cancel</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+{% endblock %}

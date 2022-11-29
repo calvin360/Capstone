@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div id="register-page" class="login-wrapper">
+    <form class="login-form" method="POST">
+        <div class="container">
+            <input type="text" name="firstname" id="firstname" value="{{firstname}}" required> 
+            <label for="firstname"> First Name</label>
+        </div>
+        <div class="container">
+            <input type="text" name="lastname" id="lastname" value="{{lastname}}"required>
+            <label for="lastname"> Last Name</label>
+        </div>
+        <div class="container">
+            <input type="text" name="username" id="username" value="{{username}}" required>
+            <label for="username"> username</label>
+        </div>
+        <div class="container">
+            <input type="email" name="email" id="email" value="{{email}}" required>
+            <label for="email">Email address</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password1" id="password1" value="{{password1}}" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password2" id="password2" value="{{password2}}" required>
+            <label for="password">Confirm Password</label>
+        </div>
+        <input type="submit" value="register" class="submit-btn">
+        <div>
+            <p>Already have an account? <a href="{{url_for('apps.appLogin')}}" class="forgot-password">Login</a></p>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

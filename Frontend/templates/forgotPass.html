@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-wrapper">
+    <form method="POST" class="login-form">
+        <h2>Change password</h2>
+        <div class="container">
+            <input type="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="container">
+            <input type="text" name="text" required>
+            <label for="text">Verification code</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password1" required>
+            <label for="password1">New Password</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password2" required>
+            <label for="password2">Confirm Password</label>
+        </div>
+        <input type="submit" value="Change password" class="submit-btn">
+        <br>
+        <input type="submit" value="Cancel" class="submit-btn">
+    </form>
+</div>
+
+{% endblock %}

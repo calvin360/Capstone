@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login-wrapper">
+    <div class="login-form">
+        <form method="POST" action="{{ url_for('apps.forgotPass', email=email) }}">
+        <h2>Change password</h2>
+        <div class="container">
+            <label for="email">{{email}}</label>
+        </div>
+        <br>
+        <br>
+        <div class="container">
+            <input type="text" name="text" value="{{code}}" required>
+            <label for="text">Verification code</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password1" value="{{password}}" required>
+            <label for="password1">New Password</label>
+        </div>
+        <div class="container">
+            <input type="password" name="password2" value="{{password2}}" required>
+            <label for="password2">Confirm Password</label>
+        </div>
+        <input type="submit" value="Change password" class="submit-btn">
+        <br>
+    </form>
+    <form method="GET" action="{{url_for('apps.requestPassword')}}"> <input type="submit" value="Cancel" class="submit-btn"> </form>
+</div>
+</div>
+
+{% endblock %}

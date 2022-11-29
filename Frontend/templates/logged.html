@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+
+    <title>Food Nation</title>
+</head>
+
+<header class="header">
+    <loading id="loading-wrapper">
+        <div id="loading"></div>
+        <div class="loading-dir dir-left"></div>
+        <div class="loading-dir dir-right"></div>
+    </loading>
+
+    <nav>
+    {% for message in get_flashed_messages() %}
+        <div class="alert">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            {{message}}
+        </div>
+    {% endfor %}
+        <div class="wrapper">
+            <div class="logo"><a href="#">Food Nation</a></div>
+            <ul class="nav-links">
+                <li><a href="#">link1</a></li>
+                <li><a href="#">link2</a></li>
+                <li>
+                    <a href="#">dropdown menu</a>
+                    <ul class="drop-menu">
+                        <li><a href="#">link1</a></li>
+                        <li><a href="#">link2</a></li>
+                        <li><a href="#">link3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Mega Menu</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="{{ url_for('static', filename='images/recipes/dish1.jpg')}}" alt="">
+                            </div>
+                            <div class="row">
+                                <header>Recipes-1</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Recipes-2</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>Recipes-3</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">link1</a></li>
+                                    <li><a href="#">link2</a></li>
+                                    <li><a href="#">link3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <li>
+                    <a href="{{url_for('profile')}}">Profile</a></li>
+                    </li>
+                    <li><a href="{{url_for('logout')}}">Logout</a></li>
+                    </li>
+                    <li><a href="{{url_for('logged')}}">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+<script src="{{url_for('static', filename='js/jquery-3.6.1.js')}}"></script>
+<script src="{{url_for('static', filename='js/index.js')}}"></script>
+
+</html>
+
+
+    

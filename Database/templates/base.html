@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCp-LHqfb4rkj5zU8Gg1CJD-rWjKuULwFc"></script>
+    <title>Food Nation</title>
+</head>
+
+<header>
+    {% for message in get_flashed_messages() %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{message}}
+    </div>
+    {% endfor %}
+    <!-- nav  -->
+    <nav class="navbar">
+        <div class="nav-center">
+            <div class="nav-header">
+                <a href="{{url_for('apps.home')}}" class="nav-logo">Food Nation</a>
+                <button class="nav-btn btn">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+            </div>
+            <div class=" nav-links">
+                <a href="{{url_for('apps.home')}}" class="nav-link"> home </a>
+                <a href="#" class="nav-link"> about </a>
+                <div class="nav-link signIn-link">
+                    <a href="{{url_for('apps.appRegister')}}" class="btn"> Sign Up </a>
+                    <a href="{{url_for('apps.appLogin')}}" class="btn"> Login </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of nav -->
+</header>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+
+<footer class="footer">
+    <div class="row">
+        <h4>Connect</h4>
+        <h5>Follow Us</h5>
+        <a href="https://www.facebook.com/profile.php?id=100087368332093"><i
+                class="fa-brands fa-facebook footer-socials"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter footer-socials"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram footer-socials"></i></a>
+        <a href="#"><i class="fa-brands fa-snapchat footer-socials"></i></a>
+        <br><br>
+        <h5>Subscribe to our newsletter</h5>
+        <input type="email" class="footer-newletter" placeholder="Email Address">
+    </div>
+    <div class="row">
+        <h4>Get the app!</h4>
+        <button class="footer-download"><i class="fa-brands fa-google-play"></i>
+            Get it on Google play
+        </button><br>
+        <button class="footer-download"><i class="fa-brands fa-app-store"></i></i>
+            Get it on Google play
+        </button>
+    </div>
+    <div class="row">
+        <h4>Find</h4>
+        <a href="#">
+            <h5>Terms and Conditions</h5>
+        </a>
+        <a href="#">
+            <h5>Privacy</h5>
+        </a>
+        <a href="{{url_for('apps.contact')}}">
+            <h5>Contact</h5>
+        </a>
+    </div>
+    <div class="row">
+        <p>&copy; <span>2021</span>
+            <span>Food Nation</span>
+        </p>
+    </div>
+</footer>
+
+</html>

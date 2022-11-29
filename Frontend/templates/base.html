@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- normalize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+    <!-- main -->
+    <link rel="stylesheet" href="../static/css/styles.css">
+
+    <!-- fontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <!-- favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico')}}">
+</head>
+
+<header>
+    <!-- nav  -->
+    <nav class="navbar">
+        <div class="nav-center">
+            <div class="nav-header">
+                <a href="#" class="nav-logo">Food Nation</a>
+                <button class="nav-btn btn">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+            </div>
+            <div class=" nav-links">
+                <a href="#" class="nav-link"> home </a>
+                <a href="#" class="nav-link"> about </a>
+                <a href="#" class="nav-link"> tags </a>
+                <a href="#" class="nav-link"> contact </a>
+                <li>
+                    <a href="#" class="nav-link">recipes</a>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <h4>This Week's Recipes</h4>
+                                <img src="../static/images/dish1.jpg" />
+                                <!-- <img src="{{ url_for('static', filename='images/recipes/dish1.jpg')}}" alt=""> -->
+                                <h5>John Makes chicken</h5>
+                            </div>
+                            <div class="row">
+                                <h4>Starters</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#" class="nav-link">link1</a></li>
+                                    <li><a href="#" class="nav-link">link2</a></li>
+                                    <li><a href="#" class="nav-link">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <h4>Main Dishes</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#" class="nav-link">link1</a></li>
+                                    <li><a href="#" class="nav-link">link2</a></li>
+                                    <li><a href="#" class="nav-link">link3</a></li>
+                                </ul>
+                            </div>
+                            <div class=" row">
+                                <h4>Dessert</h4>
+                                <ul class="mega-links">
+                                    <li><a href="#" class="nav-link">link1</a></li>
+                                    <li><a href="#" class="nav-link">link2</a></li>
+                                    <li><a href="#" class="nav-link">link3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <div class="nav-link signIn-link">
+                    <a href="{{url_for('hello')}}" class="btn"> Sign Up </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end of nav -->
+</header>
+
+<body>
+    <div class="page">
+        <h3>Recipes</h3>
+        <div class="recipe-list">
+            <a href="hello.html" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 1</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="hello2.html" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 2</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 2</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 2</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 2</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 3</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 4</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+            <a href="#" class="recipe">
+                <img src="../static/images/dish1.jpg" class="recipe-img" />
+                <h5>CHICKEN 4</h5>
+                <p>Prep: 15mins | Cook: 5mins</p>
+            </a>
+        </div>
+    </div>
+</body>
+
+<footer class="footer">
+    <div class="row">
+        <h4>Connect</h4>
+        <h5>Follow Us</h5>
+    </div>
+    <div class="row1">
+        <p>&copy; <span>2021</span>
+            <span>Food Nation</span>
+        </p>
+    </div>
+    <div class="row1">
+        <p>&copy; <span>2021</span>
+            <span>Food Nation</span>
+        </p>
+    </div>
+    <div class="row1">
+        <p>&copy; <span>2021</span>
+            <span>Food Nation</span>
+        </p>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- materialize js-->
+<script src="../static/js/index.js"></script>
+
+</html>

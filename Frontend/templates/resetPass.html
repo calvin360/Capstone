@@ -1,0 +1,37 @@
+{% extends 'logged.html' %}
+
+{% block content %}
+<div class="row">
+    <form method="POST" class="row">
+    <div >
+        <h1>Change password</h1>
+        
+            <label><b>Old Password</b></label>
+            <div class="space">
+                <input type="password" placeholder="Password" name="password1" required="required">
+            </div>
+            <br>
+            <label><b>New Password</b></label>
+            <div class="space">
+                <input type="password" placeholder="Password" name="password2" required="required">
+            </div>
+            <br>
+            <label><b>confirm Password</b></label>
+            <div class="space">
+                <input type="password" placeholder="Password" name="password3" required="required">
+            </div>
+            <br>
+            <div class="space">
+                <button type="submit">Change password</button>
+            </div>
+            <br>
+    
+            <div class="space">
+                <button class="cancelbutton" type="button">Cancel</button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+{% endblock %}

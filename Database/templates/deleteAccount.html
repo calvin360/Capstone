@@ -1,0 +1,29 @@
+{% extends 'logged_template.html' %}
+{% block content %}
+
+<div id="register-page" class="login-wrapper">
+    {% for message in get_flashed_messages() %}
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        {{message}}
+    </div>
+    {% endfor %}
+        <div >
+            <Div>Please enter your password below to Delete your account</Div>
+            <form action="{{ url_for('apps.deleteProfile') }}" method="POST" >
+                <label for="password"> Password</label>
+                <input name="password" type="password" value="" required>
+                
+                
+                <br>
+                <br>
+                <input class="p-btn p-delete" type="submit" value="Delete Account" />
+                
+            </form>
+        </div>
+
+</div>
+
+
+
+{% endblock %}
